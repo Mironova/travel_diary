@@ -1,0 +1,43 @@
+.row
+  .col-md-9.col-sm-8
+    - @articles.each do |article|
+      - 5.times do
+        .col-md-4.col-sm-6
+          .preview_article
+            .cover
+              = image_tag 'article_cover.jpg', style: 'width: 250px;'
+            h3=link_to article.title, article
+            .description
+              = article.content.truncate(150)
+            .read_more
+              = link_to 'Read more', article
+            span= article.created_at.strftime('%B %d, %Y')
+
+  .col-md-3.col-sm-4
+    h3 About me
+
+
+
+/h1 Listing articles
+/
+/table
+/  thead
+/    tr
+/      th Title
+/      th Content
+/      th
+/      th
+/      th
+/
+/  tbody
+/    - @articles.each do |article|
+/      tr
+/        td = article.title
+/        td = article.content
+/        td = link_to 'Show', article
+/        td = link_to 'Edit', edit_article_path(article)
+/        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+/
+/br
+/
+/= link_to 'New Article', new_article_path

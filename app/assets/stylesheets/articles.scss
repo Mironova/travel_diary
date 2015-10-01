@@ -1,0 +1,25 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.preview_article {
+  padding-bottom: 20px;
+  .cover {
+    height: 130px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .description {
+    height: 70px;
+  }
+  .read_more {
+    margin-bottom: 10px;
+  }
+  span {
+    color: $text-muted;
+  }
+}

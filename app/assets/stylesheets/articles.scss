@@ -1,15 +1,17 @@
 .preview_article {
-  padding-bottom: 20px;
+  margin-bottom: 25px;
+  height: 220px;
   .cover {
-    height: 130px;
     overflow: hidden;
+    height: 220px;
+    position: relative;
     img {
       width: 100%;
+      transform: translateY(-50%);
       height: auto;
+      top: 50%;
+      position: absolute;
     }
-  }
-  .description {
-    height: 70px;
   }
   .read_more {
     margin-bottom: 10px;

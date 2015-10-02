@@ -9,7 +9,7 @@ html
   body
     .container
       = render 'layouts/header'
-      .content
+      .content class="#{'white' unless params[:action]=='index'}"
         = yield
 
     = render 'layouts/footer'

@@ -24,7 +24,7 @@ footer, .container:after {
   height: 50px;
 }
 
-h3, a {
+h2, h3, a, label {
   color: $title-color;
 }
 a:hover {
@@ -33,8 +33,11 @@ a:hover {
 }
 
 .content {
+  padding: 10px 40px;
+}
+
+.white {
   background-color: white;
-  padding: 30px 15px;
 }
 
 
@@ -72,6 +75,8 @@ header {
     position: absolute;
     right: 0;
     bottom: 0;
+    width: 65%;
+    text-align: right;
     p {
       color: $text-muted;
       font-size: 18px;
@@ -87,6 +92,21 @@ footer {
   .copyright {
     padding-top: 15px;
     text-align: center;
+  }
+}
+
+////about////
+
+.sidebar {
+  background-color: white;
+  .block {
+    padding-bottom: 10px;
+  }
+  img {
+    width: 100%;
+  }
+  .information {
+    margin-top: 15px;
   }
 }
 

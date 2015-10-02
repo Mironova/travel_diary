@@ -9,9 +9,12 @@
   .title_field
     = f.label :title
     = f.text_field :title, class: 'form-control'
+  .check_field
+    = f.label :as_block
+    = f.check_box :as_block
   .content_field
     = f.label :content
     = f.text_area :content
-  .btn-group.btn-group-sm
+  .btn-group
     = f.submit 'Submit', class: 'btn btn-success'
     = link_to 'Back', articles_path, class: 'btn btn-default'

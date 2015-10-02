@@ -1,12 +1,12 @@
 .row
-  .col-md-8.col-sm-8
+  .col-md-9.col-sm-9
     - @articles.each do |article|
       - 5.times do
         .preview_article
-          .col-md-6
+          .col-md-6.col-sm-6.col-xs-6
             .cover
               = image_tag 'article_cover.jpg'
-          .col-md-6
+          .col-md-6.col-sm-6.col-xs-6
             h3=link_to article.title, article
             .description
               = raw article.content.truncate(150, separator: ' ')
@@ -14,31 +14,11 @@
               = link_to 'Read more', article
             span= article.created_at.strftime('%B %d, %Y')
 
-  .col-md-4.col-sm-4
-    h3 About me
-
-
-
-/h1 Listing articles
-/
-/table
-/  thead
-/    tr
-/      th Title
-/      th Content
-/      th
-/      th
-/      th
-/
-/  tbody
-/    - @articles.each do |article|
-/      tr
-/        td = article.title
-/        td = article.content
-/        td = link_to 'Show', article
-/        td = link_to 'Edit', edit_article_path(article)
-/        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
-/
-/br
-/
-/= link_to 'New Article', new_article_path
+  .col-md-3.col-sm-3.sidebar
+    - @blocks.each do |block|
+      .block
+        h3 = block.title
+        = image_tag 'about_me.jpg'
+        .information
+          p= raw block.content
+        = link_to 'Edit', edit_article_path(block), class: 'btn btn-xs btn-default'

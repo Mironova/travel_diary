@@ -5,10 +5,10 @@
         .col-md-4.col-sm-6
           .preview_article
             .cover
-              = image_tag 'article_cover.jpg', style: 'width: 250px;'
+              = image_tag 'article_cover.jpg'
             h3=link_to article.title, article
             .description
-              = article.content.truncate(150)
+              = article.content.truncate(150, separator: ' ')
             .read_more
               = link_to 'Read more', article
             span= article.created_at.strftime('%B %d, %Y')

@@ -20,6 +20,9 @@
   span {
     color: $text-muted;
   }
+  .btn-group {
+    margin-bottom: 10px;
+  }
 }
 
 //form//
@@ -42,5 +45,8 @@ form {
       display: inline-block;
       margin-left: 20px;
     }
+  }
+  .cover_field {
+    margin-bottom: 20px;
   }
 }

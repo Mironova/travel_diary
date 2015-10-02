@@ -27,7 +27,7 @@ footer, .container:after {
 h2, h3, a, label {
   color: $title-color;
 }
-a:hover {
+a:hover, a:focus {
   text-decoration: none;
   color: $link-hover;
 }
@@ -63,12 +63,9 @@ header {
       top: 55px;
     }
     .title {
-      top: 60px;
+      top: 40px;
       width: 100px;
       left: 155px;
-      a {
-        color: $text-color;
-      }
     }
   }
   .quote {
@@ -95,7 +92,7 @@ footer {
   }
 }
 
-////about////
+////sidebar////
 
 .sidebar {
   background-color: white;
@@ -107,6 +104,9 @@ footer {
   }
   .information {
     margin-top: 15px;
+  }
+  .btn-group {
+    margin-bottom: 10px;
   }
 }
 

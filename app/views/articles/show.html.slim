@@ -1,12 +1,6 @@
-.vc style="background-color: white;"
-  - if notice.present?
-    p#notice.alert.alert-success = notice
+- if notice.present?
+  p#notice.alert.alert-success = notice
 
-  h3 = @article.title
+h3 = @article.title
 
-  p= raw @article.content
-
-  .btn-group
-    = link_to 'Edit', edit_article_path(@article), class: 'btn btn-info'
-    = link_to 'Back', articles_path, class: 'btn btn-default'
-
+p= raw @article.content

@@ -1,4 +1,4 @@
-= form_for @article do |f|
+= form_for @article, html: { multipart: true } do |f|
   - if @article.errors.any?
     #error_explanation.alert.alert-warning
       h4 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
@@ -10,11 +10,14 @@
     = f.label :title
     = f.text_field :title, class: 'form-control'
   .check_field
-    = f.label :as_block
+    = f.label :as_block, 'As block for sidebar'
     = f.check_box :as_block
+  .cover_field
+    p Choose the cover picture for the article preview
+    = f.file_field :cover
   .content_field
     = f.label :content
     = f.text_area :content
-  .btn-group
+  .btn-group.btn-group-sm
     = f.submit 'Submit', class: 'btn btn-success'
     = link_to 'Back', articles_path, class: 'btn btn-default'

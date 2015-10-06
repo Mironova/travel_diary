@@ -8,6 +8,8 @@ gem 'slim-rails'
 
 gem 'bootstrap-sass'
 
+gem 'friendly_id'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

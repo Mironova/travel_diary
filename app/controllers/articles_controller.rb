@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "admin", password: "123123", only: :admin
+
 
   # GET /articles
   # GET /articles.json
@@ -60,6 +62,12 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def admin
+    session[:admin] = Time.now
+    redirect_to root_path, notice: 'You are not admin'
+
   end
 
   private

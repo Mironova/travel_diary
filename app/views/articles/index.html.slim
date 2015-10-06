@@ -8,8 +8,9 @@
         .col-md-6.col-sm-6.col-xs-6
           h3=link_to article.title, article
           .btn-group.btn-group-xs
-            = link_to 'Edit', edit_article_path(article), class: 'btn btn-default'
-            = link_to 'Destroy', article, class: 'btn btn-danger', data: {:confirm => 'Are you sure?'}, :method => :delete
+            - if admin?
+              = link_to 'Edit', edit_article_path(article), class: 'btn btn-default'
+              = link_to 'Destroy', article, class: 'btn btn-danger', data: {:confirm => 'Are you sure?'}, :method => :delete
           .description
             = raw article.content.truncate(150, separator: ' ')
           .read_more
@@ -21,8 +22,9 @@
       .block
         h3 = block.title
         .btn-group.btn-group-xs
-          = link_to 'Edit', edit_article_path(block), class: 'btn btn-default'
-          = link_to 'Destroy', block, class: 'btn btn-danger', data: {:confirm => 'Are you sure?'}, :method => :delete
+          - if admin?
+            = link_to 'Edit', edit_article_path(block), class: 'btn btn-default'
+            = link_to 'Destroy', block, class: 'btn btn-danger', data: {:confirm => 'Are you sure?'}, :method => :delete
         = image_tag block.cover.url(:medium)
         .information
           p= raw block.content
